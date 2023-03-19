@@ -12,20 +12,27 @@ def compute_clip_sim(image_embeds, text_embeds):
 
     
 def get_samples(videoreader, num_samples=32, sample_interval=15, start=None):#, end=None):
-    ''' start and end are frame indices
-        
-#        Returns: an np.array of dimensions num_ x num 
+    ''' start and end are frame indices. 
+        sample_interval is in frames. 
     '''
-    total_avail_frames = len(videoreader)
-    print('total available frame:', total_avail_frames)
+    avail_frames = len(videoreader)
             
     start = start if start else 0
     end = start + num_samples*sample_interval
-    
-    if total_avail_frames < start + num_samples: raise Exception("Video or duration requested too short")
-    if total_avail_frames < end: 
+
+    if avail_frames < end:
         print("Reducing sample interval to 1")
-        sample_interval = 1
+        sample_interval = 1        
+        end = start + num_samples*sample_interval
+        if avail_frames < end:
+            raise Exception("Video or duration requested too short")
+
+    
+#     if total_avail_frames < start + num_samples: 
+#         raise Exception("Video or duration requested too short")
+#     if total_avail_frames < end: 
+#         print("Reducing sample interval to 1")
+#         sample_interval = 1
     
     indices = [*range(start, end, sample_interval)]
     print(indices)
