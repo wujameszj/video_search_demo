@@ -1,5 +1,6 @@
 
 from math import ceil
+
 from torch import matmul, no_grad
 
 
@@ -52,7 +53,7 @@ def get_sample_frame_idx(videoreader, sample_length=16, num_frames_per_sample=32
     range_per_sample = int(sample_length * videoreader.get_avg_fps())  # range in # of frames
     interval_per_frame_of_sample = ceil(range_per_sample / num_frames_per_sample)
     num_samples = int(len(videoreader) // range_per_sample)
-    print('draws one frame every', interval_per_frame_of_sample, 'frames over', range_per_sample, 'frames')
+    print('sample every', interval_per_frame_of_sample, 'frames over', range_per_sample, 'frames')
     
     indices = []
     for i in range(0, num_samples):
