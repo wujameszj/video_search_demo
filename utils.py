@@ -1,4 +1,8 @@
+
+from math import ceil
 from torch import matmul, no_grad
+
+
 
 def compute_clip_sim(image_embeds, text_embeds):
     with no_grad():
@@ -37,3 +41,21 @@ def get_samples(videoreader, num_samples=32, sample_interval=15, start=None):#, 
     indices = [*range(start, end, sample_interval)]
     print(indices)
     return videoreader.get_batch(indices).asnumpy()
+
+
+
+def get_sample_frame_idx(videoreader, sample_length=16, num_frames_per_sample=32):
+    '''
+    sample_length is in seconds
+    return list of n lists of frame indices, where n is num_samples, AKA num_vectors
+    '''
+    range_per_sample = int(sample_length * videoreader.get_avg_fps())  # range in # of frames
+    interval_per_frame_of_sample = ceil(range_per_sample / num_frames_per_sample)
+    num_samples = int(len(videoreader) // range_per_sample)
+    print('draws one frame every', interval_per_frame_of_sample, 'frames over', range_per_sample, 'frames')
+    
+    indices = []
+    for i in range(0, num_samples):
+        _indices = range(i*range_per_sample, (i+1)*range_per_sample, interval_per_frame_of_sample)
+        indices.append([*_indices])
+    return indices, range_per_sample
