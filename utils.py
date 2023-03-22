@@ -31,13 +31,6 @@ def get_samples(videoreader, num_samples=32, sample_interval=15, start=None):#, 
         end = start + num_samples*sample_interval
         if avail_frames < end:
             raise Exception("Video or duration requested too short")
-
-    
-#     if total_avail_frames < start + num_samples: 
-#         raise Exception("Video or duration requested too short")
-#     if total_avail_frames < end: 
-#         print("Reducing sample interval to 1")
-#         sample_interval = 1
     
     indices = [*range(start, end, sample_interval)]
     print(indices)
