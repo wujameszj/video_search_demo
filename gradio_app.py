@@ -51,15 +51,12 @@ def search(video, query, sample_length=4):
 
 demo = gr.Interface(
     search, 
-    inputs=['video', 'text'], 
-    # inputs=[gr.Video(), gr.Textbox(), gr.Number()], 
+    inputs=['video', 'text', 'number'], 
     outputs=['plot', 'text'], 
     examples=[
-        ["videos/aerial.mp4", "moving cars"], 
-        ["videos/aerial_small.mp4", 'moving cars'],
-        ['videos/Tank.mp4', 'people walking']
-        # ["videos/aerial.mp4", "moving cars", 16], 
-        # ["videos/aerial_small.mp4", 'moving cars', 32]
+        ['videos/Tank.mp4', 'people walking', 4],
+        ["videos/aerial.mp4", "moving cars", 16], 
+        ["videos/aerial_small.mp4", 'moving cars', 32]
     ]
 )
 

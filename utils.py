@@ -44,14 +44,13 @@ def get_sample_frame_idx(videoreader, sample_length=16, num_frames_per_sample=32
     return list of n lists of frame indices, where n is num_samples, AKA num_vectors
     '''
     range_per_sample = int(sample_length * videoreader.get_avg_fps())   #  range in # of frames
-#    interval_per_frame_of_sample = ceil(range_per_sample / num_frames_per_sample)
     interval_per_frame_of_sample = range_per_sample // num_frames_per_sample
     num_samples = int(len(videoreader) // range_per_sample)   #  necessary to use // so that value doesnt round up
     print('sample every', interval_per_frame_of_sample, 'frames over', range_per_sample, 'frames')
     
     indices = []
     for i in range(0, num_samples):
-#        _indices = range(i*range_per_sample, (i+1)*range_per_sample, interval_per_frame_of_sample)
-        _indices = [i*range_per_sample + f*interval_per_frame_of_sample for f in range(num_frames_per_sample)] #range(, (i+1)*range_per_sample, )
+        _indices = [i*range_per_sample + f*interval_per_frame_of_sample for f in range(num_frames_per_sample)]
         indices.append(_indices)
+        
     return indices, range_per_sample
