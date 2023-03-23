@@ -16,7 +16,7 @@ def compute_clip_sim(image_embeds, text_embeds):
     
 
     
-def get_samples(videoreader, num_samples=32, sample_interval=15, start=None):#, end=None):
+def get_samples(videoreader, num_samples=32, sample_interval=15, start=None):
     ''' start and end are frame indices. 
         sample_interval is in frames. 
     '''
@@ -50,7 +50,7 @@ def get_sample_frame_idx(videoreader, sample_length=16, num_frames_per_sample=32
     
     indices = []
     for i in range(0, num_samples):
-        _indices = [i*range_per_sample + f*interval_per_frame_of_sample for f in range(num_frames_per_sample)]
-        indices.append(_indices)
-        
+        indices.append([
+            i*range_per_sample + f*interval_per_frame_of_sample for f in range(num_frames_per_sample)
+        ])        
     return indices, range_per_sample

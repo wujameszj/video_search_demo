@@ -44,7 +44,7 @@ def search(video, query, sample_length=4):
     logits = compute_clip_sim(video_features, text_features)
     
     sample_start_time = arange(len(idx)) * range_per_sample / vr.get_avg_fps()
-    fig = plt.figure(); plt.plot(sample_start_time, *logits); plt.grid()#; plt.savefig('temp.png')
+    fig = plt.figure(); plt.plot(sample_start_time, *logits); plt.grid()
     return fig, f'Content matching query found near {idx[logits.argmax()][0] // vr.get_avg_fps()}s'
 
 
