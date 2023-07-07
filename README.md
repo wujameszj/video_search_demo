@@ -19,8 +19,25 @@ The "sample length" option determines how many seconds of video will be examined
 
 
 
-### Notes
+
+## Bibtex
+
+```
+@article{XCLIP,
+  title={Expanding Language-Image Pretrained Models for General Video Recognition},
+  author={Ni, Bolin and Peng, Houwen and Chen, Minghao and Zhang, Songyang and Meng, Gaofeng and Fu, Jianlong and Xiang, Shiming and Ling, Haibin},
+  booktitle={European Conference on Computer Vision (ECCV)},
+  year={2022}
+}
+```
+
+## Acknowledgements
+
+X-CLIP implementation by [Microsoft](https://github.com/microsoft/VideoX/tree/master/X-CLIP); code taken from [Huggingface](https://huggingface.co/microsoft/xclip-base-patch32)  
 
 Credits to [Armadas](https://www.youtube.com/watch?v=zCLOJ9j1k2Y) for the aerial video.
+
+
+### Notes
 
 Known issue:  random crashes with large video files
