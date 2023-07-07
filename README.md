@@ -8,6 +8,8 @@ The "sample length" option determines how many seconds of video will be examined
 
 ![screenshot](images/aerial_cars.png)
 
+![screenshot](images/tank_example.png)
+
 
 ## Try it 
 
