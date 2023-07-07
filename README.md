@@ -14,7 +14,7 @@ The "sample length" option determines how many seconds of video will be examined
 ## Try it 
 
 1. Clone this repo and switch to project directory
-1. Install dependencies: `pip install -r environments.txt`
+1. Install dependencies: `pip install -r requirements.txt`
 2. Launch app: `python gradio_app.py`
 
 
