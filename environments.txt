@@ -1,3 +1,6 @@
 transformers
 decord
 gradio
+
+torch
+brotli

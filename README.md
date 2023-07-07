@@ -4,9 +4,9 @@ Given a text query, the app returns the video timestamp that is most likely to c
 The graph on the top right shows relative probability of interest plotted against timestamp in seconds.  
 The "sample length" option determines how many seconds of video will be examined at a time by the model.  A higher value will allow for faster search but at reduced precision and potentially accuracy.  
 
-![screenshot](images/gradio_app.png)  
+![screenshot](images/forest.png)  
 
-![screenshot](images/Tank%20example.png)
+![screenshot](images/aerial_cars.png)
 
 
 ## Try it 
