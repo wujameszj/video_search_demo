@@ -40,4 +40,5 @@ Credits to [Armadas](https://www.youtube.com/watch?v=zCLOJ9j1k2Y) for the aerial
 
 ### Notes
 
+Tested to work for 3.8 <= python <= 3.11   
 Known issue:  random crashes with large video files
