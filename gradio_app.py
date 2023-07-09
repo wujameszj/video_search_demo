@@ -27,9 +27,16 @@ def embed(videoreader, idx, model, processor):
 
 
 
+def _load_model(name="microsoft/xclip-base-patch16-zero-shot", model_dir='xclip-base-patch16-zero-shot'):
+    if exists(model_dir):
+        return AP.from_pretrained(model_dir), AM.from_pretrained(model_dir)
+    else:
+        return AP.from_pretrained(name), AM.from_pretrained(name)
+
+
+
 def search(video, query, sample_length=4):    
-    model_name = "microsoft/xclip-base-patch16-zero-shot"
-    processor, model = AP.from_pretrained(model_name), AM.from_pretrained(model_name)    
+    processor, model = _load_model()
     
     vr = VideoReader(video, ctx=cpu(0))
     idx, range_per_sample = get_sample_frame_idx(vr, sample_length)
@@ -58,7 +65,10 @@ demo = gr.Interface(
     examples=[
         ["videos/aerial.mp4", "buildings near a forest ", 16],
         ["videos/aerial.mp4", "moving cars", 16],
-        ['videos/Tank.mp4', 'people walking', 4]
+        ["videos/aerial.mp4", "ferris wheel", 16],
+        ['videos/Tank.mp4', 'people walking', 4],
+        ['videos/tank_inside.mp4', 'speedometer', 2], 
+        ['videos/tank_inside.mp4', 'operation manual', 2]        
     ]
 )
 
