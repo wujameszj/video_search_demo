@@ -43,7 +43,7 @@ _The first search after running the app will take a bit of time because the mode
 
 ## Acknowledgements
 
-X-CLIP implementation by [Microsoft](https://github.com/microsoft/VideoX/tree/master/X-CLIP); code taken from [Huggingface](https://huggingface.co/microsoft/xclip-base-patch32)  
+X-CLIP implementation by [Microsoft](https://github.com/microsoft/VideoX/tree/master/X-CLIP); code taken from [Huggingface](https://huggingface.co/microsoft/xclip-base-patch16-zero-shot)    
 
 Credits to [Armadas](https://www.youtube.com/watch?v=zCLOJ9j1k2Y) for the aerial video.
 
