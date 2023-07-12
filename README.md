@@ -7,7 +7,10 @@ The graph on the top right shows relative probability of interest plotted agains
 
 ![screenshot](images/aerial_cars.png)
 
+![screenshot](images/firework.png)
+
 ![screenshot](images/tank_example.png)
+
 
 **sample length** determines how many seconds of video will be examined at a time by the model.  
 A higher value will allow for faster search but at reduced precision and potentially accuracy.  
@@ -43,7 +46,7 @@ _The first search after running the app will take a bit of time because the mode
 
 ## Acknowledgements
 
-X-CLIP implementation by [Microsoft](https://github.com/microsoft/VideoX/tree/master/X-CLIP); code taken from [Huggingface](https://huggingface.co/microsoft/xclip-base-patch16-zero-shot)    
+X-CLIP implementation by [Microsoft](https://github.com/microsoft/VideoX/tree/master/X-CLIP); model downloaded from [Huggingface](https://huggingface.co/microsoft/xclip-base-patch16-zero-shot)    
 
 Credits to [Armadas](https://www.youtube.com/watch?v=zCLOJ9j1k2Y) for the aerial video.
 
